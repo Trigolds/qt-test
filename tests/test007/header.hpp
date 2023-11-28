@@ -17,7 +17,8 @@ public:
 
   //添加这一段代码
 public slots:       //槽函数声明标志
-  void FoodIsComing();
+  void link_clicked();
+  void unlink_clicked();
 
 private:
   Ui::Widget* ui;

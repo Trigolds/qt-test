@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>640</width>
+    <width>581</width>
     <height>634</height>
    </rect>
   </property>
@@ -15,23 +15,26 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QPushButton" name="pushButtonAnderson">
+    <widget class="QLineEdit" name="lineEdit"/>
+   </item>
+   <item>
+    <widget class="QLabel" name="label">
      <property name="text">
-      <string>Anderson</string>
+      <string>TextLabel</string>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="QPushButton" name="pushButtonBruce">
+    <widget class="QPushButton" name="LinkButton">
      <property name="text">
-      <string>PushButton</string>
+      <string>Link</string>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="QPushButton" name="pushButtonCastiel">
+    <widget class="QPushButton" name="UnlinkButton">
      <property name="text">
-      <string>PushButton</string>
+      <string>Unlink</string>
      </property>
     </widget>
    </item>

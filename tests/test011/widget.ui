@@ -15,25 +15,23 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QPushButton" name="pushButtonAnderson">
+    <widget class="QLineEdit" name="lineEdit"/>
+   </item>
+   <item>
+    <widget class="QLabel" name="label">
+     <property name="maximumSize">
+      <size>
+       <width>578</width>
+       <height>547</height>
+      </size>
+     </property>
      <property name="text">
-      <string>Anderson</string>
+      <string>TextLabel</string>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="QPushButton" name="pushButtonBruce">
-     <property name="text">
-      <string>PushButton</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QPushButton" name="pushButtonCastiel">
-     <property name="text">
-      <string>PushButton</string>
-     </property>
-    </widget>
+    <widget class="QTextBrowser" name="textBrowser"/>
    </item>
   </layout>
  </widget>

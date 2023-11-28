@@ -15,9 +15,12 @@ public:
   explicit Widget(QWidget* parent = 0);
   ~Widget();
 
+signals:
+  void SendMsg(QString str);
+
   //添加这一段代码
 public slots:       //槽函数声明标志
-  void FoodIsComing();
+  void ButtonClicked();
 
 private:
   Ui::Widget* ui;

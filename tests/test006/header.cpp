@@ -10,12 +10,10 @@ Widget::Widget(QWidget* parent) :
 {
   ui->setupUi(this);
 
-  //添加关联代码，必须放在 setupUi 函数之后
-  connect(ui->lineEdit, SIGNAL(textEdited(QString)), ui->label, SLOT(setText(QString)));
-  //接收端是文本浏览控件
-  connect(ui->lineEdit, SIGNAL(textEdited(QString)), ui->textBrowser, SLOT(setText(QString)));
-  //接收端是主窗口的 PrintText 槽
-  connect(ui->lineEdit, SIGNAL(textEdited(QString)), this, SLOT(PrintText(QString)));
+  //三个按钮的信号都关联到 FoodIsComing 槽函数
+  connect(ui->pushButtonAnderson, SIGNAL(clicked()), this, SLOT(FoodIsComing()));
+  connect(ui->pushButtonBruce, SIGNAL(clicked()), this, SLOT(FoodIsComing()));
+  connect(ui->pushButtonCastiel, SIGNAL(clicked()), this, SLOT(FoodIsComing()));
 }
 
 Widget::~Widget()
@@ -23,7 +21,32 @@ Widget::~Widget()
   delete ui;
 }
 
-void Widget::PrintText(const QString& text)
+void Widget::FoodIsComing()
 {
-  qDebug() << text; //打印到调试输出面板
+  //获取信号源头对象的名称
+  QString strObjectSrc = this->sender()->objectName();
+  qDebug() << strObjectSrc; //打印源头对象名称
+
+  //将要显示的消息
+  QString strMsg;
+  //判断是哪个按钮发的信号
+  if ("pushButtonAnderson" == strObjectSrc)
+  {
+    strMsg = tr("Hello Anderson! Your food is coming!");
+  }
+  else if ("pushButtonBruce" == strObjectSrc)
+  {
+    strMsg = tr("Hello Bruce! Your food is coming!");
+  }
+  else if ("pushButtonCastiel" == strObjectSrc)
+  {
+    strMsg = tr("Hello Castiel! Your food is coming!");
+  }
+  else
+  {
+    //do nothing
+    return;
+  }
+  //显示送餐消息
+  QMessageBox::information(this, tr("Food"), strMsg);
 }
