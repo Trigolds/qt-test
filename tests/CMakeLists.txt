@@ -1,5 +1,7 @@
 
-LIST(APPEND TEST_DIRS test001 test002 test003 test004 test005 test006 test007 test008 test009 test010 test011)
+LIST(APPEND TEST_DIRS test001 test002 test003 test004 test005 test006 test007 test008 test009 test010 test011 test012)
+LIST(APPEND TEST_DIRS test013 test014 test015 test016)
+
 FOREACH(T_DIR ${TEST_DIRS})
   ADD_SUBDIRECTORY(${T_DIR})
 ENDFOREACH()
